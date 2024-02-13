@@ -37,7 +37,7 @@ class HomeListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(30, 12, 30, 12),
+      padding: const EdgeInsets.fromLTRB(20, 12, 20, 12),
       child: GestureDetector(
         onTap: item.onTap,
         behavior: HitTestBehavior.translucent,
@@ -45,7 +45,7 @@ class HomeListItem extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.only(right: 20),
+              padding: const EdgeInsets.only(right: 10),
               child: item.icon,
             ),
             Expanded(

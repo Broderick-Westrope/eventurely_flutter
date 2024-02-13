@@ -1,4 +1,5 @@
 import 'package:Eventurely/views/home/home.dart';
+import 'package:Eventurely/views/pending_invites/pending_invites.dart';
 import 'package:flutter/material.dart';
 
 class MenuItemModel {
@@ -17,8 +18,8 @@ class MenuItemModel {
             color: Colors.amber.shade500,
             size: 40,
           ),
-          onTap: () => Navigator.push(
-              context, MaterialPageRoute(builder: (context) => HomeScreen()))),
+          onTap: () => Navigator.push(context,
+              MaterialPageRoute(builder: (context) => PendingInvites()))),
       MenuItemModel(
           title: 'Upcoming',
           icon: Icon(
