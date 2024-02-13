@@ -47,6 +47,7 @@ class HomeListItem extends StatelessWidget {
 
           ScaffoldMessenger.of(context).showSnackBar(snackBar);
         },
+        behavior: HitTestBehavior.translucent,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
