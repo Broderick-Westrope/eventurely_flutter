@@ -11,7 +11,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: AddFAB(),
+      floatingActionButton: const AddFAB(),
       body: Container(
         decoration: BoxDecoration(color: Colors.blueGrey.shade900),
         child: HomeList(menuItems: menuItems),
