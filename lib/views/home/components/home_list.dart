@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 class HomeList extends StatelessWidget {
   HomeList({super.key});
 
-  final menuItems = MenuItemModel.getMenuItems();
-
   @override
   Widget build(BuildContext context) {
+    final menuItems = MenuItemModel.getMenuItems(context);
+
     return SingleChildScrollView(
       physics: const BouncingScrollPhysics(
           parent:
@@ -32,21 +32,14 @@ class HomeList extends StatelessWidget {
 class HomeListItem extends StatelessWidget {
   final item;
 
-  const HomeListItem({super.key, required this.item});
+  HomeListItem({super.key, required this.item});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.fromLTRB(30, 12, 30, 12),
       child: GestureDetector(
-        onTap: () {
-          var snackBar = SnackBar(
-            content: Text('Tap ${item.title}'),
-            duration: Duration(milliseconds: 500),
-          );
-
-          ScaffoldMessenger.of(context).showSnackBar(snackBar);
-        },
+        onTap: item.onTap,
         behavior: HitTestBehavior.translucent,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
