@@ -1,4 +1,4 @@
-import 'package:Eventurely/screens/home/home.dart';
+import 'package:Eventurely/views/home/home.dart';
 import 'package:flutter/material.dart';
 
 void main() {

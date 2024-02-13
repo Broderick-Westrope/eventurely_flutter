@@ -1,6 +1,6 @@
-import 'package:Eventurely/components/add_fab.dart';
+import 'package:Eventurely/widgets/add_fab.dart';
 import 'package:Eventurely/models/menu_item.dart';
-import 'package:Eventurely/screens/home/components/home_list.dart';
+import 'package:Eventurely/views/home/components/home_list.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
