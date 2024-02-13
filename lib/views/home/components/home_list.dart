@@ -37,20 +37,34 @@ class HomeListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 30, top: 12, bottom: 12),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(right: 20),
-            child: item.icon,
-          ),
-          Text(
-            item.title,
-            style: const TextStyle(
-                color: Colors.white, fontSize: 26, fontWeight: FontWeight.w600),
-          ),
-        ],
+      padding: const EdgeInsets.fromLTRB(30, 12, 30, 12),
+      child: GestureDetector(
+        onTap: () {
+          var snackBar = SnackBar(
+            content: Text('Tap ${item.title}'),
+            duration: Duration(milliseconds: 500),
+          );
+
+          ScaffoldMessenger.of(context).showSnackBar(snackBar);
+        },
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(right: 20),
+              child: item.icon,
+            ),
+            Expanded(
+              child: Text(
+                item.title,
+                style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 26,
+                    fontWeight: FontWeight.w600),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
