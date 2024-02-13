@@ -9,13 +9,12 @@
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
 
-import 'dart:async' as $async;
 import 'dart:core' as $core;
 
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../google/protobuf/timestamp.pb.dart' as $0;
+import '../../google/protobuf/timestamp.pb.dart' as $1;
 
 class Event extends $pb.GeneratedMessage {
   factory Event({
@@ -23,8 +22,8 @@ class Event extends $pb.GeneratedMessage {
     $fixnum.Int64? ownerId,
     $core.String? title,
     $core.String? description,
-    $0.Timestamp? startsAt,
-    $0.Timestamp? endsAt,
+    $1.Timestamp? startsAt,
+    $1.Timestamp? endsAt,
     $core.String? location,
     $core.String? uniqueLink,
     $core.String? privacySetting,
@@ -68,8 +67,8 @@ class Event extends $pb.GeneratedMessage {
     ..aInt64(2, _omitFieldNames ? '' : 'ownerId')
     ..aOS(3, _omitFieldNames ? '' : 'title')
     ..aOS(4, _omitFieldNames ? '' : 'description')
-    ..aOM<$0.Timestamp>(5, _omitFieldNames ? '' : 'startsAt', subBuilder: $0.Timestamp.create)
-    ..aOM<$0.Timestamp>(6, _omitFieldNames ? '' : 'endsAt', subBuilder: $0.Timestamp.create)
+    ..aOM<$1.Timestamp>(5, _omitFieldNames ? '' : 'startsAt', subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(6, _omitFieldNames ? '' : 'endsAt', subBuilder: $1.Timestamp.create)
     ..aOS(7, _omitFieldNames ? '' : 'location')
     ..aOS(8, _omitFieldNames ? '' : 'uniqueLink')
     ..aOS(9, _omitFieldNames ? '' : 'privacySetting')
@@ -134,26 +133,26 @@ class Event extends $pb.GeneratedMessage {
   void clearDescription() => clearField(4);
 
   @$pb.TagNumber(5)
-  $0.Timestamp get startsAt => $_getN(4);
+  $1.Timestamp get startsAt => $_getN(4);
   @$pb.TagNumber(5)
-  set startsAt($0.Timestamp v) { setField(5, v); }
+  set startsAt($1.Timestamp v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasStartsAt() => $_has(4);
   @$pb.TagNumber(5)
   void clearStartsAt() => clearField(5);
   @$pb.TagNumber(5)
-  $0.Timestamp ensureStartsAt() => $_ensure(4);
+  $1.Timestamp ensureStartsAt() => $_ensure(4);
 
   @$pb.TagNumber(6)
-  $0.Timestamp get endsAt => $_getN(5);
+  $1.Timestamp get endsAt => $_getN(5);
   @$pb.TagNumber(6)
-  set endsAt($0.Timestamp v) { setField(6, v); }
+  set endsAt($1.Timestamp v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasEndsAt() => $_has(5);
   @$pb.TagNumber(6)
   void clearEndsAt() => clearField(6);
   @$pb.TagNumber(6)
-  $0.Timestamp ensureEndsAt() => $_ensure(5);
+  $1.Timestamp ensureEndsAt() => $_ensure(5);
 
   @$pb.TagNumber(7)
   $core.String get location => $_getSZ(6);
@@ -188,8 +187,8 @@ class CreateEventRequest extends $pb.GeneratedMessage {
     $fixnum.Int64? ownerId,
     $core.String? title,
     $core.String? description,
-    $0.Timestamp? startsAt,
-    $0.Timestamp? endsAt,
+    $1.Timestamp? startsAt,
+    $1.Timestamp? endsAt,
     $core.String? location,
     $core.String? uniqueLink,
     $core.String? privacySetting,
@@ -229,8 +228,8 @@ class CreateEventRequest extends $pb.GeneratedMessage {
     ..aInt64(1, _omitFieldNames ? '' : 'ownerId')
     ..aOS(2, _omitFieldNames ? '' : 'title')
     ..aOS(3, _omitFieldNames ? '' : 'description')
-    ..aOM<$0.Timestamp>(4, _omitFieldNames ? '' : 'startsAt', subBuilder: $0.Timestamp.create)
-    ..aOM<$0.Timestamp>(5, _omitFieldNames ? '' : 'endsAt', subBuilder: $0.Timestamp.create)
+    ..aOM<$1.Timestamp>(4, _omitFieldNames ? '' : 'startsAt', subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(5, _omitFieldNames ? '' : 'endsAt', subBuilder: $1.Timestamp.create)
     ..aOS(6, _omitFieldNames ? '' : 'location')
     ..aOS(7, _omitFieldNames ? '' : 'uniqueLink')
     ..aOS(8, _omitFieldNames ? '' : 'privacySetting')
@@ -286,26 +285,26 @@ class CreateEventRequest extends $pb.GeneratedMessage {
   void clearDescription() => clearField(3);
 
   @$pb.TagNumber(4)
-  $0.Timestamp get startsAt => $_getN(3);
+  $1.Timestamp get startsAt => $_getN(3);
   @$pb.TagNumber(4)
-  set startsAt($0.Timestamp v) { setField(4, v); }
+  set startsAt($1.Timestamp v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasStartsAt() => $_has(3);
   @$pb.TagNumber(4)
   void clearStartsAt() => clearField(4);
   @$pb.TagNumber(4)
-  $0.Timestamp ensureStartsAt() => $_ensure(3);
+  $1.Timestamp ensureStartsAt() => $_ensure(3);
 
   @$pb.TagNumber(5)
-  $0.Timestamp get endsAt => $_getN(4);
+  $1.Timestamp get endsAt => $_getN(4);
   @$pb.TagNumber(5)
-  set endsAt($0.Timestamp v) { setField(5, v); }
+  set endsAt($1.Timestamp v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasEndsAt() => $_has(4);
   @$pb.TagNumber(5)
   void clearEndsAt() => clearField(5);
   @$pb.TagNumber(5)
-  $0.Timestamp ensureEndsAt() => $_ensure(4);
+  $1.Timestamp ensureEndsAt() => $_ensure(4);
 
   @$pb.TagNumber(6)
   $core.String get location => $_getSZ(5);
@@ -579,21 +578,6 @@ class GetUpcomingEventsResponse extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(1)
   $core.List<Event> get events => $_getList(0);
-}
-
-class EventServiceApi {
-  $pb.RpcClient _client;
-  EventServiceApi(this._client);
-
-  $async.Future<CreateEventResponse> createEvent($pb.ClientContext? ctx, CreateEventRequest request) =>
-    _client.invoke<CreateEventResponse>(ctx, 'EventService', 'CreateEvent', request, CreateEventResponse())
-  ;
-  $async.Future<GetEventResponse> getEvent($pb.ClientContext? ctx, GetEventRequest request) =>
-    _client.invoke<GetEventResponse>(ctx, 'EventService', 'GetEvent', request, GetEventResponse())
-  ;
-  $async.Future<GetUpcomingEventsResponse> getUpcomingEvents($pb.ClientContext? ctx, GetUpcomingEventsRequest request) =>
-    _client.invoke<GetUpcomingEventsResponse>(ctx, 'EventService', 'GetUpcomingEvents', request, GetUpcomingEventsResponse())
-  ;
 }
 
 

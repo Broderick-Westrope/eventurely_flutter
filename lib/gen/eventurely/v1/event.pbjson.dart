@@ -13,8 +13,6 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
-import '../../google/protobuf/timestamp.pbjson.dart' as $0;
-
 @$core.Deprecated('Use eventDescriptor instead')
 const Event$json = {
   '1': 'Event',
@@ -125,34 +123,4 @@ const GetUpcomingEventsResponse$json = {
 final $typed_data.Uint8List getUpcomingEventsResponseDescriptor = $convert.base64Decode(
     'ChlHZXRVcGNvbWluZ0V2ZW50c1Jlc3BvbnNlEiwKBmV2ZW50cxgBIAMoCzIULmV2ZW50dXJlbH'
     'kudjEuRXZlbnRSBmV2ZW50cw==');
-
-const $core.Map<$core.String, $core.dynamic> EventServiceBase$json = {
-  '1': 'EventService',
-  '2': [
-    {'1': 'CreateEvent', '2': '.eventurely.v1.CreateEventRequest', '3': '.eventurely.v1.CreateEventResponse'},
-    {'1': 'GetEvent', '2': '.eventurely.v1.GetEventRequest', '3': '.eventurely.v1.GetEventResponse'},
-    {'1': 'GetUpcomingEvents', '2': '.eventurely.v1.GetUpcomingEventsRequest', '3': '.eventurely.v1.GetUpcomingEventsResponse'},
-  ],
-};
-
-@$core.Deprecated('Use eventServiceDescriptor instead')
-const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> EventServiceBase$messageJson = {
-  '.eventurely.v1.CreateEventRequest': CreateEventRequest$json,
-  '.google.protobuf.Timestamp': $0.Timestamp$json,
-  '.eventurely.v1.CreateEventResponse': CreateEventResponse$json,
-  '.eventurely.v1.GetEventRequest': GetEventRequest$json,
-  '.eventurely.v1.GetEventResponse': GetEventResponse$json,
-  '.eventurely.v1.Event': Event$json,
-  '.eventurely.v1.GetUpcomingEventsRequest': GetUpcomingEventsRequest$json,
-  '.eventurely.v1.GetUpcomingEventsResponse': GetUpcomingEventsResponse$json,
-};
-
-/// Descriptor for `EventService`. Decode as a `google.protobuf.ServiceDescriptorProto`.
-final $typed_data.Uint8List eventServiceDescriptor = $convert.base64Decode(
-    'CgxFdmVudFNlcnZpY2USVAoLQ3JlYXRlRXZlbnQSIS5ldmVudHVyZWx5LnYxLkNyZWF0ZUV2ZW'
-    '50UmVxdWVzdBoiLmV2ZW50dXJlbHkudjEuQ3JlYXRlRXZlbnRSZXNwb25zZRJLCghHZXRFdmVu'
-    'dBIeLmV2ZW50dXJlbHkudjEuR2V0RXZlbnRSZXF1ZXN0Gh8uZXZlbnR1cmVseS52MS5HZXRFdm'
-    'VudFJlc3BvbnNlEmYKEUdldFVwY29taW5nRXZlbnRzEicuZXZlbnR1cmVseS52MS5HZXRVcGNv'
-    'bWluZ0V2ZW50c1JlcXVlc3QaKC5ldmVudHVyZWx5LnYxLkdldFVwY29taW5nRXZlbnRzUmVzcG'
-    '9uc2U=');
 
