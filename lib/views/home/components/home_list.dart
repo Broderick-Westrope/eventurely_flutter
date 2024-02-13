@@ -2,53 +2,56 @@ import 'package:Eventurely/models/menu_item.dart';
 import 'package:flutter/material.dart';
 
 class HomeList extends StatelessWidget {
-  const HomeList({
-    super.key,
-    required this.menuItems,
-  });
+  HomeList({super.key});
 
-  final List<MenuItemModel> menuItems;
+  final menuItems = MenuItemModel.getMenuItems();
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        return SingleChildScrollView(
-          physics: const BouncingScrollPhysics(
-              decelerationRate: ScrollDecelerationRate.normal),
-          child: ConstrainedBox(
-            constraints: BoxConstraints(minHeight: constraints.maxHeight),
-            child: IntrinsicHeight(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: menuItems
-                    .map((e) => Padding(
-                          padding: const EdgeInsets.all(0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Padding(
-                                padding:
-                                    const EdgeInsets.fromLTRB(30, 7, 15, 7),
-                                child: e.icon,
-                              ),
-                              Center(
-                                  child: Text(
-                                e.title,
-                                style: const TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 26,
-                                    fontWeight: FontWeight.w600),
-                              )),
-                            ],
-                          ),
-                        ))
-                    .toList(),
-              ),
-            ),
+    return SingleChildScrollView(
+      physics: const BouncingScrollPhysics(
+          parent:
+              AlwaysScrollableScrollPhysics()), // To maintain the bouncy effect
+      child: ConstrainedBox(
+        constraints: BoxConstraints(
+          minHeight: MediaQuery.of(context).size.height,
+        ),
+        child: IntrinsicHeight(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: menuItems.map((item) {
+              return HomeListItem(item: item);
+            }).toList(),
           ),
-        );
-      },
+        ),
+      ),
+    );
+  }
+}
+
+class HomeListItem extends StatelessWidget {
+  final item;
+
+  const HomeListItem({super.key, required this.item});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(left: 30, top: 12, bottom: 12),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(right: 20),
+            child: item.icon,
+          ),
+          Text(
+            item.title,
+            style: const TextStyle(
+                color: Colors.white, fontSize: 26, fontWeight: FontWeight.w600),
+          ),
+        ],
+      ),
     );
   }
 }
