@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CustomTheme {
   static const themeMode = ThemeMode.system;
@@ -8,6 +9,7 @@ class CustomTheme {
   static ThemeData lightTheme() {
     return ThemeData(
         useMaterial3: true,
+        fontFamily: 'Montserrat',
         colorScheme: ColorScheme.light(
           primary: Colors.deepPurple.shade400,
           secondary: Colors.deepPurple.shade400,
@@ -25,21 +27,26 @@ class CustomTheme {
   }
 
   static ThemeData darkTheme() {
+    const background = Color(0xFF1E2228);
+
     return ThemeData(
-        useMaterial3: true,
-        colorScheme: ColorScheme.dark(
-          primary: Colors.deepPurple.shade400,
-          secondary: Colors.deepPurple.shade400,
-          surface: Colors.deepPurple.shade400,
-          background: Colors.blueGrey.shade900,
-          error: Colors.red,
-          onPrimary: Colors.white,
-          // onSecondary: Colors.deepPurple.shade400,
-          onSurface: Colors.white,
-          // onBackground: Colors.deepPurple.shade400,
-          // onError: Colors.deepPurple.shade400,
-          brightness: Brightness.dark,
-        ),
-        appBarTheme: AppBarTheme(color: Colors.blueGrey.shade900));
+      useMaterial3: true,
+      fontFamily: GoogleFonts.inter().fontFamily,
+      colorScheme: ColorScheme.dark(
+        primary: Colors.deepPurple.shade400,
+        secondary: Colors.deepPurple.shade400,
+        surface: Colors.deepPurple.shade400,
+        background: background,
+        error: Colors.red,
+        onPrimary: Colors.white,
+        // onSecondary: Colors.deepPurple.shade400,
+        onSurface: Colors.white,
+        // onBackground: Colors.deepPurple.shade400,
+        // onError: Colors.deepPurple.shade400,
+        brightness: Brightness.dark,
+      ),
+      appBarTheme:
+          const AppBarTheme(color: background, scrolledUnderElevation: 0.0),
+    );
   }
 }

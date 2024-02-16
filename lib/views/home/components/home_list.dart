@@ -30,29 +30,35 @@ class HomeList extends StatelessWidget {
 }
 
 class HomeListItem extends StatelessWidget {
-  final item;
+  final MenuItemModel item;
 
   HomeListItem({super.key, required this.item});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(20, 12, 20, 12),
+      padding: const EdgeInsets.fromLTRB(30, 12, 30, 12),
       child: GestureDetector(
         onTap: item.onTap,
         behavior: HitTestBehavior.translucent,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.only(right: 10),
-              child: item.icon,
+            SizedBox(
+              width: 50,
+              child: Align(
+                alignment: Alignment.center,
+                child: item.icon,
+              ),
             ),
             Expanded(
-              child: Text(
-                item.title,
-                style:
-                    const TextStyle(fontSize: 26, fontWeight: FontWeight.w600),
+              child: Padding(
+                padding: const EdgeInsets.only(left: 10),
+                child: Text(
+                  item.title,
+                  style: const TextStyle(
+                      fontSize: 20, fontWeight: FontWeight.w600),
+                ),
               ),
             ),
           ],

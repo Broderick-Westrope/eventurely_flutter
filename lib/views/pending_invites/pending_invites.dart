@@ -1,6 +1,7 @@
 import 'package:Eventurely/theme/theme.dart';
 import 'package:Eventurely/widgets/add_fab.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class PendingInvites extends StatelessWidget {
   const PendingInvites({super.key});
@@ -53,15 +54,16 @@ class PendingInvites extends StatelessWidget {
       ),
       body: Container(
         child: ListView.builder(
-          itemCount: (events.length) + 1,
+          // +1 for the heading, -1 to ignore the final divider
+          itemCount: (events.length * 2),
           itemBuilder: (BuildContext context, int index) {
             if (index == 0) {
               return Heading1(
                 title: 'Pending Invites',
-                icon: Icon(
-                  Icons.mail_outline,
-                  color: Colors.amber.shade500,
-                  size: 40,
+                icon: FaIcon(
+                  FontAwesomeIcons.envelope,
+                  color: Colors.amber.shade400,
+                  size: 35,
                 ),
               );
             }
@@ -70,23 +72,26 @@ class PendingInvites extends StatelessWidget {
             final title = events[index % events.length];
             final subtitle = dateTimes[index % dateTimes.length];
 
-            return Padding(
-              padding: const EdgeInsets.fromLTRB(5, 2, 5, 2),
-              child: Container(
-                child: ListTile(
-                  title: Text(title),
-                  subtitle: Text(subtitle),
-                  trailing: IconButton(
-                    icon: Icon(
-                      Icons.mark_email_unread_outlined,
-                      size: 45,
-                      color: Colors.grey.shade300,
-                    ),
-                    // TODO: Implement onPressed for RSVP popup
-                    onPressed: () {},
-                  ),
+            if (index == (events.length * 2) - 2) {
+              return Column(
+                children: [
+                  InviteListItem(title: title, subtitle: subtitle),
+                  const SizedBox(height: 80),
+                ],
+              );
+            }
+
+            return Column(
+              children: [
+                InviteListItem(title: title, subtitle: subtitle),
+                Divider(
+                  color: Colors.grey.shade500,
+                  height: 20,
+                  thickness: 0.2,
+                  indent: 20,
+                  endIndent: 20,
                 ),
-              ),
+              ],
             );
           },
         ),
@@ -95,9 +100,42 @@ class PendingInvites extends StatelessWidget {
   }
 }
 
+class InviteListItem extends StatelessWidget {
+  const InviteListItem({
+    super.key,
+    required this.title,
+    required this.subtitle,
+  });
+
+  final String title;
+  final String subtitle;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(5, 2, 5, 2),
+      child: Container(
+        child: ListTile(
+          title: Text(title),
+          subtitle: Text(subtitle),
+          trailing: IconButton(
+            icon: FaIcon(
+              FontAwesomeIcons.envelopeOpen,
+              color: Colors.yellow.shade100,
+              size: 35,
+            ),
+            // TODO: Implement onPressed for RSVP popup
+            onPressed: () {},
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 class Heading1 extends StatelessWidget {
   final String title;
-  final Icon icon;
+  final FaIcon icon;
 
   const Heading1({super.key, required this.title, required this.icon});
 
@@ -111,7 +149,7 @@ class Heading1 extends StatelessWidget {
           Text(
             title,
             style: const TextStyle(
-              fontSize: 26,
+              fontSize: 24,
               fontWeight: FontWeight.w600,
             ),
           ),
