@@ -10,7 +10,6 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       floatingActionButton: const AddFAB(),
       body: Container(
-        decoration: BoxDecoration(color: Colors.blueGrey.shade900),
         child: HomeList(),
       ),
     );

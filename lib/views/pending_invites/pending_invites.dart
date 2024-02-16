@@ -1,3 +1,4 @@
+import 'package:Eventurely/theme/theme.dart';
 import 'package:Eventurely/widgets/add_fab.dart';
 import 'package:flutter/material.dart';
 
@@ -29,11 +30,10 @@ class PendingInvites extends StatelessWidget {
     ];
 
     return Scaffold(
-      backgroundColor: Colors.blueGrey.shade900,
       floatingActionButton: AddFAB(),
       appBar: AppBar(
         leading: BackButton(
-          color: Colors.grey.shade500,
+          color: CustomTheme.toolbarActionsColor,
           style: ButtonStyle(iconSize: MaterialStateProperty.all(25)),
         ),
         actions: [
@@ -44,17 +44,16 @@ class PendingInvites extends StatelessWidget {
               padding: const EdgeInsets.only(right: 20),
               child: Icon(
                 Icons.expand_circle_down_outlined,
-                color: Colors.grey.shade500,
+                color: CustomTheme.toolbarActionsColor,
                 size: 35,
               ),
             ),
           ),
         ],
-        backgroundColor: Colors.blueGrey.shade900,
       ),
       body: Container(
         child: ListView.builder(
-          itemCount: (events.length * 200) + 1,
+          itemCount: (events.length) + 1,
           itemBuilder: (BuildContext context, int index) {
             if (index == 0) {
               return Heading1(
@@ -68,7 +67,6 @@ class PendingInvites extends StatelessWidget {
             }
 
             index--;
-            // final realIndex = index - 1;
             final title = events[index % events.length];
             final subtitle = dateTimes[index % dateTimes.length];
 
@@ -76,15 +74,8 @@ class PendingInvites extends StatelessWidget {
               padding: const EdgeInsets.fromLTRB(5, 2, 5, 2),
               child: Container(
                 child: ListTile(
-                  title: Text(
-                    title,
-                    style: const TextStyle(
-                        color: Colors.white, fontWeight: FontWeight.w600),
-                  ),
-                  subtitle: Text(
-                    subtitle,
-                    style: const TextStyle(color: Colors.white),
-                  ),
+                  title: Text(title),
+                  subtitle: Text(subtitle),
                   trailing: IconButton(
                     icon: Icon(
                       Icons.mark_email_unread_outlined,
@@ -120,7 +111,6 @@ class Heading1 extends StatelessWidget {
           Text(
             title,
             style: const TextStyle(
-              color: Colors.white,
               fontSize: 26,
               fontWeight: FontWeight.w600,
             ),

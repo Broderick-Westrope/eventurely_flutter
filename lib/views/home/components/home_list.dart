@@ -51,10 +51,8 @@ class HomeListItem extends StatelessWidget {
             Expanded(
               child: Text(
                 item.title,
-                style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 26,
-                    fontWeight: FontWeight.w600),
+                style:
+                    const TextStyle(fontSize: 26, fontWeight: FontWeight.w600),
               ),
             ),
           ],

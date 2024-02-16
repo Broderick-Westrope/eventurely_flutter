@@ -1,3 +1,4 @@
+import 'package:Eventurely/theme/theme.dart';
 import 'package:Eventurely/views/home/home.dart';
 import 'package:flutter/material.dart';
 
@@ -10,6 +11,12 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: HomeScreen());
+    return MaterialApp(
+      home: HomeScreen(),
+      theme: CustomTheme.lightTheme(),
+      darkTheme: CustomTheme.darkTheme(),
+      themeMode: CustomTheme.themeMode,
+      color: CustomTheme.appColor,
+    );
   }
 }

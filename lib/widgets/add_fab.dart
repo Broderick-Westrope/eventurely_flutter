@@ -11,8 +11,6 @@ class AddFAB extends StatelessWidget {
       padding: const EdgeInsets.only(right: 10),
       child: FloatingActionButton(
         onPressed: () {},
-        backgroundColor: Colors.deepPurple.shade400,
-        foregroundColor: Colors.white,
         child: const Icon(
           Icons.add,
           size: 40,
