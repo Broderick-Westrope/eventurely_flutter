@@ -3,31 +3,99 @@ import 'package:Eventurely/widgets/add_fab.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+class inviteData {
+  final String title;
+  final String subtitle;
+  final String responseStatus;
+
+  inviteData({
+    required this.title,
+    required this.subtitle,
+    required this.responseStatus,
+  });
+
+  FaIcon getIcon() {
+    switch (responseStatus) {
+      case 'Seen':
+        return FaIcon(
+          FontAwesomeIcons.envelopeOpen,
+          color: Colors.blue.shade300,
+          size: 35,
+        );
+      case 'Yes':
+        return FaIcon(
+          FontAwesomeIcons.check,
+          color: Colors.green.shade300,
+          size: 35,
+        );
+      case 'No':
+        return FaIcon(
+          FontAwesomeIcons.xmark,
+          color: Colors.red.shade300,
+          size: 35,
+        );
+      case 'Maybe':
+        return FaIcon(
+          FontAwesomeIcons.question,
+          color: Colors.orange.shade300,
+          size: 35,
+        );
+      default:
+        return FaIcon(
+          FontAwesomeIcons.envelope,
+          color: Colors.yellow.shade300,
+          size: 35,
+        );
+    }
+  }
+}
+
 class PendingInvites extends StatelessWidget {
   const PendingInvites({super.key});
 
   @override
   Widget build(BuildContext context) {
-    const events = [
-      'John Does Birthday',
-      'Jane Does Wedding',
-      'Garys Graduation',
-      'Sallys Baby Shower',
-      'Bens Bachelor Party',
-      'Mikes Retirement',
-      'Lisas Housewarming',
-      'Toms Farewell',
-    ];
-
-    const dateTimes = [
-      '16:00-17:00 Thursday 12th Dec 2021',
-      '12:00-14:00 Saturday 15th Jan 2022',
-      '10:00-12:00 Sunday 16th Jan 2022',
-      '14:00-16:00 Saturday 22nd Jan 2022',
-      '20:00-23:00 Friday 28th Jan 2022',
-      '12:00-14:00 Saturday 5th Feb 2022',
-      '10:00-12:00 Sunday 6th Feb 2022',
-      '14:00-16:00 Saturday 12th Feb 2022',
+    List<inviteData> invites = [
+      inviteData(
+        title: 'John Does Birthday',
+        subtitle: '16:00-17:00 Thursday 12th Dec 2021',
+        responseStatus: 'Yes',
+      ),
+      inviteData(
+        title: 'Jane Does Wedding',
+        subtitle: '12:00-14:00 Saturday 15th Jan 2022',
+        responseStatus: 'No',
+      ),
+      inviteData(
+        title: 'Garys Graduation',
+        subtitle: '10:00-12:00 Sunday 16th Jan 2022',
+        responseStatus: 'Maybe',
+      ),
+      inviteData(
+        title: 'Sallys Baby Shower',
+        subtitle: '14:00-16:00 Saturday 22nd Jan 2022',
+        responseStatus: 'Seen',
+      ),
+      inviteData(
+        title: 'Bens Bachelor Party',
+        subtitle: '20:00-23:00 Friday 28th Jan 2022',
+        responseStatus: 'Sent',
+      ),
+      inviteData(
+        title: 'Mikes Retirement',
+        subtitle: '12:00-14:00 Saturday 5th Feb 2022',
+        responseStatus: 'Yes',
+      ),
+      inviteData(
+        title: 'Lisas Housewarming',
+        subtitle: '10:00-12:00 Sunday 6th Feb 2022',
+        responseStatus: 'No',
+      ),
+      inviteData(
+        title: 'Toms Farewell',
+        subtitle: '14:00-16:00 Saturday 12th Feb 2022',
+        responseStatus: 'Maybe',
+      ),
     ];
 
     return Scaffold(
@@ -55,7 +123,7 @@ class PendingInvites extends StatelessWidget {
       body: Container(
         child: ListView.builder(
           // +1 for the heading, -1 to ignore the final divider
-          itemCount: (events.length * 2),
+          itemCount: (invites.length * 2),
           itemBuilder: (BuildContext context, int index) {
             if (index == 0) {
               return Heading1(
@@ -69,13 +137,12 @@ class PendingInvites extends StatelessWidget {
             }
 
             index--;
-            final title = events[index % events.length];
-            final subtitle = dateTimes[index % dateTimes.length];
+            final data = invites[index % invites.length];
 
-            if (index == (events.length * 2) - 2) {
+            if (index == (invites.length * 2) - 2) {
               return Column(
                 children: [
-                  InviteListItem(title: title, subtitle: subtitle),
+                  InviteListItem(data: data),
                   const SizedBox(height: 80),
                 ],
               );
@@ -83,7 +150,7 @@ class PendingInvites extends StatelessWidget {
 
             return Column(
               children: [
-                InviteListItem(title: title, subtitle: subtitle),
+                InviteListItem(data: data),
                 Divider(
                   color: Colors.grey.shade500,
                   height: 20,
@@ -103,12 +170,10 @@ class PendingInvites extends StatelessWidget {
 class InviteListItem extends StatelessWidget {
   const InviteListItem({
     super.key,
-    required this.title,
-    required this.subtitle,
+    required this.data,
   });
 
-  final String title;
-  final String subtitle;
+  final inviteData data;
 
   @override
   Widget build(BuildContext context) {
@@ -116,17 +181,33 @@ class InviteListItem extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(5, 2, 5, 2),
       child: Container(
         child: ListTile(
-          title: Text(title),
-          subtitle: Text(subtitle),
-          trailing: IconButton(
-            icon: FaIcon(
-              FontAwesomeIcons.envelopeOpen,
-              color: Colors.yellow.shade100,
-              size: 35,
+          title: Text(data.title),
+          subtitle: Text(data.subtitle),
+          trailing: SizedBox(
+            child: Align(
+              alignment: Alignment.center,
+              child: data.getIcon(),
             ),
-            // TODO: Implement onPressed for RSVP popup
-            onPressed: () {},
+            width: 40,
           ),
+          // trailing: Column(
+          //   children: [
+          //     Text(
+          //       '1',
+          //       style: const TextStyle(
+          //         fontSize: 22,
+          //         fontWeight: FontWeight.w600,
+          //       ),
+          //     ),
+          //     Text(
+          //       'Week',
+          //       style: const TextStyle(
+          //         fontSize: 12,
+          //         fontWeight: FontWeight.w600,
+          //       ),
+          //     )
+          //   ],
+          // ),
         ),
       ),
     );
