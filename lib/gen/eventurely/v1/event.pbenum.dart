@@ -16,13 +16,15 @@ import 'package:protobuf/protobuf.dart' as $pb;
 class ResponseStatus extends $pb.ProtobufEnum {
   static const ResponseStatus RESPONSE_STATUS_UNSPECIFIED = ResponseStatus._(0, _omitEnumNames ? '' : 'RESPONSE_STATUS_UNSPECIFIED');
   static const ResponseStatus RESPONSE_STATUS_SENT = ResponseStatus._(1, _omitEnumNames ? '' : 'RESPONSE_STATUS_SENT');
-  static const ResponseStatus RESPONSE_STATUS_YES = ResponseStatus._(2, _omitEnumNames ? '' : 'RESPONSE_STATUS_YES');
-  static const ResponseStatus RESPONSE_STATUS_NO = ResponseStatus._(3, _omitEnumNames ? '' : 'RESPONSE_STATUS_NO');
-  static const ResponseStatus RESPONSE_STATUS_MAYBE = ResponseStatus._(4, _omitEnumNames ? '' : 'RESPONSE_STATUS_MAYBE');
+  static const ResponseStatus RESPONSE_STATUS_SEEN = ResponseStatus._(2, _omitEnumNames ? '' : 'RESPONSE_STATUS_SEEN');
+  static const ResponseStatus RESPONSE_STATUS_YES = ResponseStatus._(3, _omitEnumNames ? '' : 'RESPONSE_STATUS_YES');
+  static const ResponseStatus RESPONSE_STATUS_NO = ResponseStatus._(4, _omitEnumNames ? '' : 'RESPONSE_STATUS_NO');
+  static const ResponseStatus RESPONSE_STATUS_MAYBE = ResponseStatus._(5, _omitEnumNames ? '' : 'RESPONSE_STATUS_MAYBE');
 
   static const $core.List<ResponseStatus> values = <ResponseStatus> [
     RESPONSE_STATUS_UNSPECIFIED,
     RESPONSE_STATUS_SENT,
+    RESPONSE_STATUS_SEEN,
     RESPONSE_STATUS_YES,
     RESPONSE_STATUS_NO,
     RESPONSE_STATUS_MAYBE,

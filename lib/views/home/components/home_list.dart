@@ -2,7 +2,7 @@ import 'package:Eventurely/models/menu_item.dart';
 import 'package:flutter/material.dart';
 
 class HomeList extends StatelessWidget {
-  HomeList({super.key});
+  const HomeList({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ class HomeList extends StatelessWidget {
 class HomeListItem extends StatelessWidget {
   final MenuItemModel item;
 
-  HomeListItem({super.key, required this.item});
+  const HomeListItem({super.key, required this.item});
 
   @override
   Widget build(BuildContext context) {

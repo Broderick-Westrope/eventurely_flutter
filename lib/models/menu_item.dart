@@ -22,7 +22,7 @@ class MenuItemModel {
             size: 35,
           ),
           onTap: () =>
-              Navigator.push(context, ShadowPageRoute(page: PendingInvites()))),
+              Navigator.push(context, ShadowPageRoute(page: const PendingInvites()))),
       // MaterialPageRoute(builder: (context) => PendingInvites()))),
       MenuItemModel(
           title: 'Upcoming',
@@ -33,7 +33,7 @@ class MenuItemModel {
             size: 35,
           ),
           onTap: () => Navigator.push(
-              context, MaterialPageRoute(builder: (context) => HomeScreen()))),
+              context, MaterialPageRoute(builder: (context) => const HomeScreen()))),
       MenuItemModel(
           title: 'Organising',
           icon: FaIcon(
@@ -43,7 +43,7 @@ class MenuItemModel {
             size: 35,
           ),
           onTap: () => Navigator.push(
-              context, MaterialPageRoute(builder: (context) => HomeScreen()))),
+              context, MaterialPageRoute(builder: (context) => const HomeScreen()))),
       MenuItemModel(
           title: 'Archive',
           icon: FaIcon(
@@ -53,7 +53,7 @@ class MenuItemModel {
             size: 35,
           ),
           onTap: () => Navigator.push(
-              context, MaterialPageRoute(builder: (context) => HomeScreen()))),
+              context, MaterialPageRoute(builder: (context) => const HomeScreen()))),
       MenuItemModel(
           title: 'Connections',
           icon: FaIcon(
@@ -63,7 +63,7 @@ class MenuItemModel {
             size: 35,
           ),
           onTap: () => Navigator.push(
-              context, MaterialPageRoute(builder: (context) => HomeScreen()))),
+              context, MaterialPageRoute(builder: (context) => const HomeScreen()))),
       MenuItemModel(
           title: 'Settings',
           icon: FaIcon(
@@ -73,7 +73,7 @@ class MenuItemModel {
             size: 35,
           ),
           onTap: () => Navigator.push(
-              context, MaterialPageRoute(builder: (context) => HomeScreen()))),
+              context, MaterialPageRoute(builder: (context) => const HomeScreen()))),
     ];
   }
 }

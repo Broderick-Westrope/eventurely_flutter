@@ -983,11 +983,11 @@ class ListUpcomingInvitedEventsRequest extends $pb.GeneratedMessage {
 
 class ListUpcomingInvitedEventsResponse extends $pb.GeneratedMessage {
   factory ListUpcomingInvitedEventsResponse({
-    $core.Iterable<InvitedEvent>? events,
+    $core.Iterable<InvitedEvent>? invitedEvents,
   }) {
     final $result = create();
-    if (events != null) {
-      $result.events.addAll(events);
+    if (invitedEvents != null) {
+      $result.invitedEvents.addAll(invitedEvents);
     }
     return $result;
   }
@@ -996,7 +996,7 @@ class ListUpcomingInvitedEventsResponse extends $pb.GeneratedMessage {
   factory ListUpcomingInvitedEventsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListUpcomingInvitedEventsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'eventurely.v1'), createEmptyInstance: create)
-    ..pc<InvitedEvent>(1, _omitFieldNames ? '' : 'events', $pb.PbFieldType.PM, subBuilder: InvitedEvent.create)
+    ..pc<InvitedEvent>(1, _omitFieldNames ? '' : 'invitedEvents', $pb.PbFieldType.PM, subBuilder: InvitedEvent.create)
     ..hasRequiredFields = false
   ;
 
@@ -1022,7 +1022,7 @@ class ListUpcomingInvitedEventsResponse extends $pb.GeneratedMessage {
   static ListUpcomingInvitedEventsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<InvitedEvent> get events => $_getList(0);
+  $core.List<InvitedEvent> get invitedEvents => $_getList(0);
 }
 
 class ListPastEventsRequest extends $pb.GeneratedMessage {

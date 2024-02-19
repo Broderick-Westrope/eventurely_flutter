@@ -19,17 +19,19 @@ const ResponseStatus$json = {
   '2': [
     {'1': 'RESPONSE_STATUS_UNSPECIFIED', '2': 0},
     {'1': 'RESPONSE_STATUS_SENT', '2': 1},
-    {'1': 'RESPONSE_STATUS_YES', '2': 2},
-    {'1': 'RESPONSE_STATUS_NO', '2': 3},
-    {'1': 'RESPONSE_STATUS_MAYBE', '2': 4},
+    {'1': 'RESPONSE_STATUS_SEEN', '2': 2},
+    {'1': 'RESPONSE_STATUS_YES', '2': 3},
+    {'1': 'RESPONSE_STATUS_NO', '2': 4},
+    {'1': 'RESPONSE_STATUS_MAYBE', '2': 5},
   ],
 };
 
 /// Descriptor for `ResponseStatus`. Decode as a `google.protobuf.EnumDescriptorProto`.
 final $typed_data.Uint8List responseStatusDescriptor = $convert.base64Decode(
     'Cg5SZXNwb25zZVN0YXR1cxIfChtSRVNQT05TRV9TVEFUVVNfVU5TUEVDSUZJRUQQABIYChRSRV'
-    'NQT05TRV9TVEFUVVNfU0VOVBABEhcKE1JFU1BPTlNFX1NUQVRVU19ZRVMQAhIWChJSRVNQT05T'
-    'RV9TVEFUVVNfTk8QAxIZChVSRVNQT05TRV9TVEFUVVNfTUFZQkUQBA==');
+    'NQT05TRV9TVEFUVVNfU0VOVBABEhgKFFJFU1BPTlNFX1NUQVRVU19TRUVOEAISFwoTUkVTUE9O'
+    'U0VfU1RBVFVTX1lFUxADEhYKElJFU1BPTlNFX1NUQVRVU19OTxAEEhkKFVJFU1BPTlNFX1NUQV'
+    'RVU19NQVlCRRAF');
 
 @$core.Deprecated('Use privacySettingDescriptor instead')
 const PrivacySetting$json = {
@@ -253,14 +255,14 @@ final $typed_data.Uint8List listUpcomingInvitedEventsRequestDescriptor = $conver
 const ListUpcomingInvitedEventsResponse$json = {
   '1': 'ListUpcomingInvitedEventsResponse',
   '2': [
-    {'1': 'events', '3': 1, '4': 3, '5': 11, '6': '.eventurely.v1.InvitedEvent', '10': 'events'},
+    {'1': 'invited_events', '3': 1, '4': 3, '5': 11, '6': '.eventurely.v1.InvitedEvent', '10': 'invitedEvents'},
   ],
 };
 
 /// Descriptor for `ListUpcomingInvitedEventsResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listUpcomingInvitedEventsResponseDescriptor = $convert.base64Decode(
-    'CiFMaXN0VXBjb21pbmdJbnZpdGVkRXZlbnRzUmVzcG9uc2USMwoGZXZlbnRzGAEgAygLMhsuZX'
-    'ZlbnR1cmVseS52MS5JbnZpdGVkRXZlbnRSBmV2ZW50cw==');
+    'CiFMaXN0VXBjb21pbmdJbnZpdGVkRXZlbnRzUmVzcG9uc2USQgoOaW52aXRlZF9ldmVudHMYAS'
+    'ADKAsyGy5ldmVudHVyZWx5LnYxLkludml0ZWRFdmVudFINaW52aXRlZEV2ZW50cw==');
 
 @$core.Deprecated('Use listPastEventsRequestDescriptor instead')
 const ListPastEventsRequest$json = {
