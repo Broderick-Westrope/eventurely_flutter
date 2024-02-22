@@ -51,7 +51,19 @@ class PendingInvites extends ConsumerWidget {
               itemBuilder: (context, index) {
                 final filter = InviteFilter.values[index];
                 return CheckboxListTile(
-                  title: Text(filter.toString().split('.').last),
+                  contentPadding: const EdgeInsets.only(top: 0, bottom: 0),
+                  title: Row(
+                    children: [
+                      SizedBox(
+                        width: 40,
+                        height: 35,
+                        child: Align(
+                            alignment: Alignment.center,
+                            child: getFilterIcon(filter)),
+                      ),
+                      Text(getFilterText(filter)),
+                    ],
+                  ),
                   value: localFilters.contains(filter),
                   onChanged: (bool? selected) {
                     if (selected == true) {

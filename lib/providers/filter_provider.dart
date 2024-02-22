@@ -1,5 +1,7 @@
 import 'package:Eventurely/gen/eventurely/v1/event.pb.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 enum InviteFilter {
   sent,
@@ -50,5 +52,45 @@ bool matchesFilter(InvitedEvent invite, InviteFilter filter) {
       return invite.status == ResponseStatus.RESPONSE_STATUS_MAYBE;
     default:
       return false; // Unknown filter
+  }
+}
+
+extension StringExtension on String {
+  String capitalise() {
+    return "${this[0].toUpperCase()}${substring(1)}";
+  }
+}
+
+String getFilterText(InviteFilter filter) {
+  switch (filter) {
+    case InviteFilter.sent:
+      return 'Unread';
+    case InviteFilter.seen:
+      return 'Read';
+    case InviteFilter.yes:
+      return 'Yes';
+    case InviteFilter.no:
+      return 'No';
+    case InviteFilter.maybe:
+      return 'Maybe';
+    default:
+      return 'UNKNOWN STATUS';
+  }
+}
+
+FaIcon getFilterIcon(InviteFilter filter) {
+  switch (filter) {
+    case InviteFilter.sent:
+      return const FaIcon(FontAwesomeIcons.envelope);
+    case InviteFilter.seen:
+      return const FaIcon(FontAwesomeIcons.envelopeOpen);
+    case InviteFilter.yes:
+      return const FaIcon(FontAwesomeIcons.check);
+    case InviteFilter.no:
+      return const FaIcon(FontAwesomeIcons.xmark);
+    case InviteFilter.maybe:
+      return const FaIcon(FontAwesomeIcons.question);
+    default:
+      return const FaIcon(FontAwesomeIcons.triangleExclamation);
   }
 }
