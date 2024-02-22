@@ -1,7 +1,7 @@
 import 'package:Eventurely/gen/eventurely/v1/event.pb.dart';
-import 'package:Eventurely/providers/filter_provider.dart';
-import 'package:Eventurely/utils/icon_utils.dart';
-import 'package:Eventurely/widgets/list_heading.dart';
+import 'package:Eventurely/src/providers/filter_provider.dart';
+import 'package:Eventurely/src/utils/icon_utils.dart';
+import 'package:Eventurely/src/widgets/list_heading.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 

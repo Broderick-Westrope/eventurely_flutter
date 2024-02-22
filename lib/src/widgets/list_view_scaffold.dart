@@ -1,5 +1,5 @@
-import 'package:Eventurely/theme/theme.dart';
-import 'package:Eventurely/widgets/add_fab.dart';
+import 'package:Eventurely/src/theme/theme.dart';
+import 'package:Eventurely/src/widgets/add_fab.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';

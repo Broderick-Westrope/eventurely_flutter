@@ -1,6 +1,6 @@
-import 'package:Eventurely/utils/navigation.dart';
-import 'package:Eventurely/views/home/home.dart';
-import 'package:Eventurely/views/pending_invites/pending_invites.dart';
+import 'package:Eventurely/src/utils/navigation.dart';
+import 'package:Eventurely/src/views/home/home.dart';
+import 'package:Eventurely/src/views/pending_invites/pending_invites.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -21,8 +21,8 @@ class MenuItemModel {
             color: Colors.amber.shade500,
             size: 35,
           ),
-          onTap: () =>
-              Navigator.push(context, ShadowPageRoute(page: const PendingInvites()))),
+          onTap: () => Navigator.push(
+              context, ShadowPageRoute(page: const PendingInvites()))),
       // MaterialPageRoute(builder: (context) => PendingInvites()))),
       MenuItemModel(
           title: 'Upcoming',
@@ -32,8 +32,8 @@ class MenuItemModel {
             color: Colors.red.shade400,
             size: 35,
           ),
-          onTap: () => Navigator.push(
-              context, MaterialPageRoute(builder: (context) => const HomeScreen()))),
+          onTap: () => Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const HomeScreen()))),
       MenuItemModel(
           title: 'Organising',
           icon: FaIcon(
@@ -42,8 +42,8 @@ class MenuItemModel {
             color: Colors.green.shade400,
             size: 35,
           ),
-          onTap: () => Navigator.push(
-              context, MaterialPageRoute(builder: (context) => const HomeScreen()))),
+          onTap: () => Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const HomeScreen()))),
       MenuItemModel(
           title: 'Archive',
           icon: FaIcon(
@@ -52,8 +52,8 @@ class MenuItemModel {
             color: Colors.orange.shade200,
             size: 35,
           ),
-          onTap: () => Navigator.push(
-              context, MaterialPageRoute(builder: (context) => const HomeScreen()))),
+          onTap: () => Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const HomeScreen()))),
       MenuItemModel(
           title: 'Connections',
           icon: FaIcon(
@@ -62,8 +62,8 @@ class MenuItemModel {
             color: Colors.blue.shade400,
             size: 35,
           ),
-          onTap: () => Navigator.push(
-              context, MaterialPageRoute(builder: (context) => const HomeScreen()))),
+          onTap: () => Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const HomeScreen()))),
       MenuItemModel(
           title: 'Settings',
           icon: FaIcon(
@@ -72,8 +72,8 @@ class MenuItemModel {
             color: Colors.grey.shade300,
             size: 35,
           ),
-          onTap: () => Navigator.push(
-              context, MaterialPageRoute(builder: (context) => const HomeScreen()))),
+          onTap: () => Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const HomeScreen()))),
     ];
   }
 }

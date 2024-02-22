@@ -1,9 +1,9 @@
-import 'package:Eventurely/providers/filter_provider.dart';
-import 'package:Eventurely/views/pending_invites/widgets/invite_list_builder.dart';
-import 'package:Eventurely/widgets/filter_dialog.dart';
-import 'package:Eventurely/widgets/list_view_scaffold.dart';
+import 'package:Eventurely/src/providers/filter_provider.dart';
+import 'package:Eventurely/src/views/pending_invites/widgets/invite_list_builder.dart';
+import 'package:Eventurely/src/widgets/filter_dialog.dart';
+import 'package:Eventurely/src/widgets/list_view_scaffold.dart';
 import 'package:fixnum/fixnum.dart' as $fixnum;
-import 'package:Eventurely/providers/event_provider.dart';
+import 'package:Eventurely/src/providers/event_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
