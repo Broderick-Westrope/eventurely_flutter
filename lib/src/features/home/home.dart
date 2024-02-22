@@ -1,5 +1,5 @@
+import 'package:Eventurely/src/features/home/components/home_list.dart';
 import 'package:Eventurely/src/widgets/add_fab.dart';
-import 'package:Eventurely/src/views/home/components/home_list.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {

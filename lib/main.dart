@@ -1,5 +1,5 @@
-import 'package:Eventurely/src/theme/theme.dart';
-import 'package:Eventurely/src/views/home/home.dart';
+import 'package:Eventurely/src/features/home/home.dart';
+import 'package:Eventurely/src/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

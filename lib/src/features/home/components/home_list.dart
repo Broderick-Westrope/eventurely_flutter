@@ -1,4 +1,4 @@
-import 'package:Eventurely/src/models/menu_item.dart';
+import 'package:Eventurely/src/features/home/menu_item.dart';
 import 'package:flutter/material.dart';
 
 class HomeList extends StatelessWidget {

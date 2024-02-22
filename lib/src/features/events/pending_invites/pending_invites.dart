@@ -1,5 +1,5 @@
+import 'package:Eventurely/src/features/events/pending_invites/widgets/invite_list_builder.dart';
 import 'package:Eventurely/src/providers/filter_provider.dart';
-import 'package:Eventurely/src/views/pending_invites/widgets/invite_list_builder.dart';
 import 'package:Eventurely/src/widgets/filter_dialog.dart';
 import 'package:Eventurely/src/widgets/list_view_scaffold.dart';
 import 'package:fixnum/fixnum.dart' as $fixnum;
