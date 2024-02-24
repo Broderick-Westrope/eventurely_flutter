@@ -1,5 +1,5 @@
 import 'package:Eventurely/src/features/home/home.dart';
-import 'package:Eventurely/src/features/events/pending_invites/pending_invites.dart';
+import 'package:Eventurely/src/features/events/presentation/pending_invites_view/pending_invites_screen.dart';
 import 'package:Eventurely/src/utils/navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
