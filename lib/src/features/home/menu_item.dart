@@ -1,7 +1,4 @@
-import 'package:Eventurely/src/features/home/home.dart';
-import 'package:Eventurely/src/features/events/presentation/pending_invites_view/pending_invites_screen.dart';
 import 'package:Eventurely/src/routing/app_router.dart';
-import 'package:Eventurely/src/utils/navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
