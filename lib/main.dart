@@ -1,6 +1,5 @@
-import 'package:Eventurely/src/features/home/home.dart';
+import 'package:Eventurely/src/app.dart';
 import 'package:Eventurely/src/providers/grpc_provider.dart';
-import 'package:Eventurely/src/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:grpc/grpc.dart';
@@ -32,21 +31,6 @@ void main() {
     overrides: [
       clientChannelProvider.overrideWithValue(channel),
     ],
-    child: const MainApp(),
+    child: const MyApp(),
   ));
-}
-
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: const HomeScreen(),
-      theme: CustomTheme.lightTheme(),
-      darkTheme: CustomTheme.darkTheme(),
-      themeMode: CustomTheme.themeMode,
-      color: CustomTheme.appColor,
-    );
-  }
 }

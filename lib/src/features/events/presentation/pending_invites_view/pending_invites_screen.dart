@@ -7,8 +7,8 @@ import 'package:Eventurely/src/providers/event_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class PendingInvites extends ConsumerWidget {
-  const PendingInvites({super.key});
+class PendingInvitesScreen extends ConsumerWidget {
+  const PendingInvitesScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

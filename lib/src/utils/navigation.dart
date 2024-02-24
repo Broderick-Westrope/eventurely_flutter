@@ -1,36 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
-class ShadowPageRoute<T> extends PageRouteBuilder<T> {
-  final Widget page;
-  ShadowPageRoute({required this.page})
+class ShadowTransition<T> extends CustomTransitionPage<T> {
+  ShadowTransition({required Widget child, LocalKey? key})
       : super(
-          pageBuilder: (context, animation, secondaryAnimation) => page,
-          transitionDuration:
-              const Duration(milliseconds: 150), // Animation duration
+          key: key,
+          child: child,
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            final fadeAnimation =
+                CurvedAnimation(parent: animation, curve: Curves.fastOutSlowIn)
+                    .drive(Tween<double>(begin: 0.0, end: 0.7));
+            final slideAnimation =
+                CurvedAnimation(parent: animation, curve: Curves.decelerate)
+                    .drive(Tween<Offset>(
+                        begin: const Offset(1.0, 0.0), end: Offset.zero));
+
             return Stack(
               children: <Widget>[
-                // Previous screen
                 Container(
                   color: Colors.black.withOpacity(0.0),
                 ),
-                // Fade transition to create a shadow effect
                 FadeTransition(
-                  opacity: Tween<double>(
-                    begin: 0.0,
-                    end: 0.6, // Shadow opacity level
-                  ).animate(animation),
+                  opacity: fadeAnimation,
                   child: Container(
                     color: Colors.black,
                   ),
                 ),
-                // Slide transition
                 SlideTransition(
-                  position: Tween<Offset>(
-                    begin: const Offset(
-                        1.0, 0.0), // Slide direction: right to left
-                    end: Offset.zero,
-                  ).animate(animation),
+                  position: slideAnimation,
                   child: child,
                 ),
               ],
