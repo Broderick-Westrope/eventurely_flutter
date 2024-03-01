@@ -4,8 +4,14 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 class FilterDialog extends ConsumerWidget {
   final void Function() onApply;
   final Widget content;
+  final String title;
 
-  const FilterDialog({super.key, required this.onApply, required this.content});
+  const FilterDialog({
+    super.key,
+    required this.onApply,
+    required this.content,
+    required this.title,
+  });
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -22,10 +28,10 @@ class FilterDialog extends ConsumerWidget {
           children: [
             content,
             Row(
-              mainAxisAlignment: MainAxisAlignment.end,
+              // mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(5),
                   child: TextButton(
                     onPressed: () {
                       Navigator.of(context).pop(); // Close the dialog
@@ -33,12 +39,19 @@ class FilterDialog extends ConsumerWidget {
                     child: const Text('Cancel'),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: TextButton(
-                    onPressed: onApply,
-                    child: const Text('Apply'),
+                Expanded(
+                  child: Text(
+                    title,
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.titleLarge,
                   ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(5),
+                  child: TextButton(
+                      onPressed: onApply,
+                      child: const Text('Apply'),
+                      style: Theme.of(context).textButtonTheme.style),
                 ),
               ],
             ),

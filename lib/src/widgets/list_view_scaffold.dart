@@ -3,6 +3,7 @@ import 'package:Eventurely/src/widgets/add_fab.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
 
 class MyListViewScaffold extends ConsumerWidget {
   final void Function(BuildContext, WidgetRef) showFilterDialog;
@@ -19,9 +20,13 @@ class MyListViewScaffold extends ConsumerWidget {
     return Scaffold(
       floatingActionButton: const AddFAB(),
       appBar: AppBar(
-        leading: BackButton(
-          color: CustomTheme.toolbarActionsColor,
-          style: ButtonStyle(iconSize: MaterialStateProperty.all(25)),
+        leading: IconButton(
+          icon: FaIcon(
+            FontAwesomeIcons.chevronLeft,
+            size: 25,
+            color: CustomTheme.toolbarActionsColor,
+          ),
+          onPressed: () => context.pop(),
         ),
         actions: [
           Padding(
