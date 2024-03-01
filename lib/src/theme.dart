@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CustomTheme {
-  static const themeMode = ThemeMode.system;
+  static const themeMode = ThemeMode.dark;
   static final appColor = Colors.deepPurple.shade400;
   static final toolbarActionsColor = Colors.grey.shade500;
 
